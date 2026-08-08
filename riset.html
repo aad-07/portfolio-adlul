@@ -10,42 +10,61 @@
     <style>
         :root { --bg-color: #f8f9fa; --text-color: #212529; --card-bg: #ffffff; --border-color: rgba(0,0,0,0.08); }
         [data-bs-theme="dark"] { --bg-color: #121212; --text-color: #f8f9fa; --card-bg: #1e1e1e; --border-color: rgba(255,255,255,0.1); }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
-        .navbar { background-color: var(--card-bg) !important; border-bottom: 1px solid var(--border-color); }
-        .hero-img { width: 100%; height: 350px; object-fit: cover; border-radius: 16px; margin-bottom: 30px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+        .navbar { background-color: var(--bg-color) !important; border-bottom: 1px solid var(--border-color); }
+        .hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .content-box { background-color: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); margin-top: -60px; position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .icon-box { background-color: rgba(25, 135, 84, 0.1); color: #198754; width: 45px; height: 45px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; margin-right: 15px; }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
+        <div class="container">
+            <a href="index.html" class="btn btn-outline-secondary btn-sm rounded-pill px-4 fw-bold"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
         </div>
     </nav>
 
-    <main class="container py-5">
+    <main class="container py-4 pb-5">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <span class="badge bg-success mb-3 px-3 py-2">Renewable Energy & Artificial Intelligence</span>
-                <h1 class="fw-bold mb-4">Optimasi Pembangkit Listrik Tenaga Angin (PLTB) Menggunakan MPPT Berbasis Algoritma ANFIS</h1>
-                
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/12499372529815825609_0" alt="Ilustrasi Riset" class="hero-img shadow-sm">
-                
-                <h4 class="fw-bold mt-4 mb-3">Latar Belakang Riset</h4>
-                <p style="line-height: 1.8;" class="text-muted">
-                    Penelitian tugas akhir ini berfokus pada peningkatan efisiensi konversi energi pada turbin angin. Karena kecepatan angin di alam sangat fluktuatif, sistem membutuhkan metode *Maximum Power Point Tracking* (MPPT) yang cerdas agar turbin selalu beroperasi pada titik daya optimalnya secara *real-time*.
-                </p>
+            <div class="col-lg-9 text-center mb-4">
+                <span class="badge bg-success bg-opacity-10 text-success mb-3 px-3 py-2 rounded-pill border border-success border-opacity-25">Tugas Akhir Terapan</span>
+                <h1 class="fw-bold mb-3" style="line-height: 1.4;">Optimasi Pembangkit Listrik Tenaga Angin (PLTB) Menggunakan MPPT Berbasis Algoritma ANFIS</h1>
+            </div>
+            
+            <div class="col-lg-10">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/12499372529815825609_0" alt="Ilustrasi Riset" class="hero-img">
+            </div>
 
-                <h4 class="fw-bold mt-4 mb-3">Metodologi & Penggunaan MATLAB</h4>
-                <p style="line-height: 1.8;" class="text-muted">
-                    Pengembangan sistem kontrol cerdas ini dilakukan melalui pemodelan dan simulasi komprehensif menggunakan **MATLAB/Simulink**. Algoritma *Adaptive Neuro-Fuzzy Inference System* (ANFIS) dipilih karena kemampuannya menggabungkan logika *fuzzy* dengan proses pembelajaran jaringan saraf tiruan (JST).
-                </p>
-                <ul class="text-muted" style="line-height: 1.8;">
-                    <li><strong>Struktur ANFIS:</strong> Merancang arsitektur jaringan untuk mengelola input kecepatan angin mekanis menjadi sinyal kontrol elektrikal.</li>
-                    <li><strong>Proses Training Data:</strong> Mengumpulkan set data operasional untuk melatih model ANFIS agar adaptif terhadap berbagai perubahan cuaca ekstrem.</li>
-                    <li><strong>Sistem Kontrol (Control Systems):</strong> Implementasi desain algoritma yang telah dilatih ke dalam blok kontrol (SCADA/Microcontroller logic) untuk mengatur putaran rotor turbin.</li>
-                </ul>
+            <div class="col-lg-8">
+                <div class="content-box">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-box"><i class="fas fa-lightbulb fs-5"></i></div>
+                        <h4 class="fw-bold mb-0">Latar Belakang</h4>
+                    </div>
+                    <p class="text-muted mb-5" style="line-height: 1.8; text-align: justify;">
+                        Kecepatan angin di alam sangat fluktuatif, sehingga sistem membutuhkan metode kontrol cerdas agar turbin selalu beroperasi pada titik daya optimalnya secara <i>real-time</i>. Penelitian ini berfokus pada efisiensi konversi energi tersebut.
+                    </p>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-box"><i class="fas fa-laptop-code fs-5"></i></div>
+                        <h4 class="fw-bold mb-0">Metodologi & Simulasi MATLAB</h4>
+                    </div>
+                    <p class="text-muted mb-3" style="line-height: 1.8; text-align: justify;">
+                        Pengembangan sistem kontrol cerdas ini dilakukan melalui pemodelan komprehensif menggunakan <strong>MATLAB/Simulink</strong>. Algoritma <i>Adaptive Neuro-Fuzzy Inference System</i> (ANFIS) digunakan karena kemampuannya menggabungkan logika *fuzzy* dengan proses pembelajaran AI.
+                    </p>
+                    <ul class="text-muted" style="line-height: 2;">
+                        <li><strong>Struktur ANFIS:</strong> Merancang arsitektur jaringan untuk mengelola input kecepatan angin.</li>
+                        <li><strong>Training Data:</strong> Melatih model agar adaptif terhadap berbagai perubahan cuaca.</li>
+                        <li><strong>Control Systems:</strong> Mengimplementasikan desain algoritma ke dalam blok kontrol untuk mengatur putaran rotor turbin.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </main>
+
+    <!-- SCRIPT INI YANG MEMPERBAIKI DARK MODE -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-bs-theme', 'dark'); }
+    </script>
 </body>
 </html>
