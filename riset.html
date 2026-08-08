@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riset | Ahmad 'Adlul Khoiri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #f8f9fa; --text-color: #212529; --card-bg: #ffffff; --border-color: rgba(0,0,0,0.08); }
+        [data-bs-theme="dark"] { --bg-color: #121212; --text-color: #f8f9fa; --card-bg: #1e1e1e; --border-color: rgba(255,255,255,0.1); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        .navbar { background-color: var(--card-bg) !important; border-bottom: 1px solid var(--border-color); }
+        .hero-img { width: 100%; height: 350px; object-fit: cover; border-radius: 16px; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <span class="badge bg-success mb-3 px-3 py-2">Renewable Energy & Artificial Intelligence</span>
+                <h1 class="fw-bold mb-4">Optimasi Pembangkit Listrik Tenaga Angin (PLTB) Menggunakan MPPT Berbasis Algoritma ANFIS</h1>
+                
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/12499372529815825609_0" alt="Ilustrasi Riset" class="hero-img shadow-sm">
+                
+                <h4 class="fw-bold mt-4 mb-3">Latar Belakang Riset</h4>
+                <p style="line-height: 1.8;" class="text-muted">
+                    Penelitian tugas akhir ini berfokus pada peningkatan efisiensi konversi energi pada turbin angin. Karena kecepatan angin di alam sangat fluktuatif, sistem membutuhkan metode *Maximum Power Point Tracking* (MPPT) yang cerdas agar turbin selalu beroperasi pada titik daya optimalnya secara *real-time*.
+                </p>
+
+                <h4 class="fw-bold mt-4 mb-3">Metodologi & Penggunaan MATLAB</h4>
+                <p style="line-height: 1.8;" class="text-muted">
+                    Pengembangan sistem kontrol cerdas ini dilakukan melalui pemodelan dan simulasi komprehensif menggunakan **MATLAB/Simulink**. Algoritma *Adaptive Neuro-Fuzzy Inference System* (ANFIS) dipilih karena kemampuannya menggabungkan logika *fuzzy* dengan proses pembelajaran jaringan saraf tiruan (JST).
+                </p>
+                <ul class="text-muted" style="line-height: 1.8;">
+                    <li><strong>Struktur ANFIS:</strong> Merancang arsitektur jaringan untuk mengelola input kecepatan angin mekanis menjadi sinyal kontrol elektrikal.</li>
+                    <li><strong>Proses Training Data:</strong> Mengumpulkan set data operasional untuk melatih model ANFIS agar adaptif terhadap berbagai perubahan cuaca ekstrem.</li>
+                    <li><strong>Sistem Kontrol (Control Systems):</strong> Implementasi desain algoritma yang telah dilatih ke dalam blok kontrol (SCADA/Microcontroller logic) untuk mengatur putaran rotor turbin.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
