@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pengalaman | Ahmad 'Adlul Khoiri</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --border-color: rgba(0,0,0,0.08);
+        }
+
+        [data-bs-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f8f9fa;
+            --card-bg: #1e1e1e;
+            --border-color: rgba(255,255,255,0.1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Navigasi */
+        .navbar {
+            background-color: var(--card-bg) !important;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* Card Layout untuk Detail */
+        .detail-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            scroll-margin-top: 100px; /* Agar saat di-klik dari home pas di posisinya */
+        }
+        .detail-img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi Simple dengan Tombol Back -->
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                <i class="fas fa-arrow-left me-2"></i>Kembali ke Halaman Utama
+            </a>
+            <button id="themeToggle" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                <i class="fas fa-moon me-1"></i> Dark Mode
+            </button>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Dokumentasi & Pengalaman Kerja</h1>
+            <p class="text-muted">Detail tugas teknis lapangan dan instalasi industri.</p>
+        </div>
+
+        <!-- Detail PT Boma Bisma Indra -->
+        <div id="boma" class="detail-card row g-0">
+            <div class="col-lg-5">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/16222682638245418639_0" alt="Boma Bisma Indra" class="detail-img">
+            </div>
+            <div class="col-lg-7 d-flex align-items-center">
+                <div class="p-4 p-lg-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2">Sektor Manufaktur Industri</span>
+                    <h2 class="fw-bold mb-3">PT Boma Bisma Indra</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Terlibat langsung dalam penanganan sistem kelistrikan untuk peralatan berat dan permesinan industri. Tugas utama berfokus pada perancangan efisiensi jalur kelistrikan, melakukan pengujian beban, dan memastikan seluruh instalasi memenuhi standar keamanan (K3) pabrik.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail PT Dok Pantai Lamongan -->
+        <div id="dok" class="detail-card row g-0 flex-lg-row-reverse">
+            <div class="col-lg-5">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/7335249924419530510_0" alt="Dok Pantai Lamongan" class="detail-img">
+            </div>
+            <div class="col-lg-7 d-flex align-items-center">
+                <div class="p-4 p-lg-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2">Sektor Galangan Kapal</span>
+                    <h2 class="fw-bold mb-3">PT Dok Pantai Lamongan</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Terjun dalam lingkungan keras galangan kapal maritim. Tanggung jawab meliputi pemeliharaan preventif (maintenance) kelistrikan kapal, troubleshooting permasalahan panel distribusi secara cepat, dan perbaikan sistem propulsi elektrik pada kapal kargo maupun tugboat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail PT Marina Artha -->
+        <div id="marina" class="detail-card row g-0">
+            <div class="col-lg-5">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/11923591757573465442_0" alt="Marina Artha" class="detail-img">
+            </div>
+            <div class="col-lg-7 d-flex align-items-center">
+                <div class="p-4 p-lg-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2">Sektor Maritim</span>
+                    <h2 class="fw-bold mb-3">PT Marina Artha</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Fokus pada instalasi komponen elektrikal untuk kapal baru (new-building) dan kapal perbaikan (repair). Memastikan integrasi sistem kelistrikan navigasi, komunikasi, dan kontrol engine memenuhi regulasi keamanan maritim dan *Marine Classification Society*.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail CV AIA Electrical Neosantara -->
+        <div id="aia" class="detail-card row g-0 flex-lg-row-reverse">
+            <div class="col-lg-5">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/13962525754430973098_0" alt="AIA Electrical" class="detail-img">
+            </div>
+            <div class="col-lg-7 d-flex align-items-center">
+                <div class="p-4 p-lg-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2">Sektor Proyek Kelistrikan & Otomasi</span>
+                    <h2 class="fw-bold mb-3">CV AIA Electrical Neosantara</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Terlibat dalam eksekusi teknis lapangan untuk perakitan panel kontrol otomatis (berbasis PLC dan HMI). Mengerjakan *wiring* kabel kontrol dari nol, pengujian sensor, hingga penyelesaian masalah logika kontrol sistem kelistrikan bangunan industri secara *real-time*.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 mt-4" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color);">
+        <p class="mb-0 text-muted small">© 2026 Ahmad 'Adlul Khoiri. Dirancang dengan Bootstrap 5.</p>
+    </footer>
+
+    <!-- Bootstrap & Script Dark Mode -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script Dark Mode ini dibuat persis seperti index.html agar transisi halaman tetap mulus
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            updateBtnState('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            if (currentTheme === 'light') {
+                htmlElement.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                updateBtnState('dark');
+            } else {
+                htmlElement.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                updateBtnState('light');
+            }
+        });
+
+        function updateBtnState(theme) {
+            if(theme === 'dark') {
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun me-1"></i> Light Mode';
+                themeToggleBtn.classList.replace('btn-outline-primary', 'btn-outline-warning');
+            } else {
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon me-1"></i> Dark Mode';
+                themeToggleBtn.classList.replace('btn-outline-warning', 'btn-outline-primary');
+            }
+        }
+    </script>
+</body>
+</html>
