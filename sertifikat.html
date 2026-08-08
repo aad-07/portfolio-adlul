@@ -10,59 +10,62 @@
     <style>
         :root { --bg-color: #f8f9fa; --text-color: #212529; --card-bg: #ffffff; --border-color: rgba(0,0,0,0.08); }
         [data-bs-theme="dark"] { --bg-color: #121212; --text-color: #f8f9fa; --card-bg: #1e1e1e; --border-color: rgba(255,255,255,0.1); }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
-        .navbar { background-color: var(--card-bg) !important; border-bottom: 1px solid var(--border-color); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+        .navbar { background-color: var(--bg-color) !important; border-bottom: 1px solid var(--border-color); }
         
         .cert-card {
-            background-color: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 25px; height: 100%; text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; 
+            padding: 35px 25px; height: 100%; text-align: center; transition: all 0.3s ease;
         }
-        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: #0d6efd; }
-        .cert-icon { font-size: 3rem; color: #0d6efd; margin-bottom: 15px; }
+        .cert-card:hover { transform: translateY(-10px); border-color: #0dcaf0; box-shadow: 0 15px 30px rgba(13, 202, 240, 0.1); }
+        .cert-icon { font-size: 3.5rem; color: #0dcaf0; margin-bottom: 20px; }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
+        <div class="container">
+            <a href="index.html" class="btn btn-outline-secondary btn-sm rounded-pill px-4 fw-bold"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
         </div>
     </nav>
 
     <main class="container py-5">
         <div class="text-center mb-5">
             <h1 class="fw-bold">Sertifikasi & Lisensi</h1>
-            <p class="text-muted">Bukti validasi keahlian teknis dan kepatuhan standar keselamatan industri.</p>
+            <p class="text-muted">Bukti validasi keahlian teknis dan kepatuhan standar industri.</p>
         </div>
 
         <div class="row g-4 justify-content-center">
-            <!-- Contoh Sertifikat 1 -->
-            <div class="col-md-4">
+            
+            <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
-                    <i class="fas fa-certificate cert-icon"></i>
-                    <h5 class="fw-bold">Keselamatan & Kesehatan Kerja (K3) Kelistrikan</h5>
-                    <p class="text-muted small mt-2">Sertifikasi pemahaman prosedur instalasi panel arus kuat dan mitigasi kecelakaan kerja listrik sesuai standar industri.</p>
+                    <i class="fas fa-hard-hat cert-icon"></i>
+                    <h5 class="fw-bold mb-3">K3 Kelistrikan</h5>
+                    <p class="text-muted small mb-0">Sertifikasi pemahaman prosedur instalasi panel arus kuat dan mitigasi kecelakaan kerja listrik sesuai standar industri manufaktur.</p>
                 </div>
             </div>
             
-            <!-- Contoh Sertifikat 2 -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <i class="fas fa-microchip cert-icon"></i>
-                    <h5 class="fw-bold">Basic PLC & SCADA Programming</h5>
-                    <p class="text-muted small mt-2">Pelatihan intensif pemrograman ladder diagram dan perancangan antarmuka HMI/SCADA untuk otomasi pabrik.</p>
+                    <h5 class="fw-bold mb-3">Basic PLC & SCADA</h5>
+                    <p class="text-muted small mb-0">Pelatihan intensif pemrograman <i>ladder diagram</i> dan perancangan antarmuka HMI untuk otomasi sistem permesinan pabrik.</p>
                 </div>
             </div>
 
-            <!-- Contoh Sertifikat 3 -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <i class="fas fa-ship cert-icon"></i>
-                    <h5 class="fw-bold">Marine Electrical System Standard</h5>
-                    <p class="text-muted small mt-2">Pemahaman regulasi kelistrikan maritim untuk perbaikan (repair) dan perancangan kapal (new-building).</p>
+                    <h5 class="fw-bold mb-3">Marine Electrical System</h5>
+                    <p class="text-muted small mb-0">Pemahaman regulasi kelistrikan maritim untuk sistem propulsi dan navigasi pada kapal perbaikan (repair) dan bangunan baru.</p>
                 </div>
             </div>
+
         </div>
     </main>
+
+    <!-- SCRIPT INI YANG MEMPERBAIKI DARK MODE -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-bs-theme', 'dark'); }
+    </script>
 </body>
 </html>
