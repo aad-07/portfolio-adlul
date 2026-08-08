@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio | Ahmad 'Adlul Khoiri</title>
     
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Plus Jakarta Sans (Modern & Profesional) -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -22,7 +19,6 @@
             --border-color: rgba(0,0,0,0.08);
         }
 
-        /* Variabel untuk Mode Gelap */
         [data-bs-theme="dark"] {
             --bg-color: #121212;
             --text-color: #f8f9fa;
@@ -38,189 +34,83 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Navigasi --- */
+        /* Navigasi */
         .navbar {
             backdrop-filter: blur(15px);
             background-color: rgba(255, 255, 255, 0.8) !important;
             border-bottom: 1px solid var(--border-color);
             transition: background-color 0.4s ease;
         }
-        [data-bs-theme="dark"] .navbar {
-            background-color: rgba(18, 18, 18, 0.8) !important;
-        }
-        .nav-link {
-            font-weight: 600;
-            color: var(--text-color) !important;
-            margin: 0 5px;
-        }
+        [data-bs-theme="dark"] .navbar { background-color: rgba(18, 18, 18, 0.8) !important; }
+        .nav-link { font-weight: 600; color: var(--text-color) !important; margin: 0 5px; }
         .nav-link:hover { color: var(--primary-color) !important; }
 
-        /* --- Hero Section --- */
+        /* Hero Section */
         .hero-section {
             padding: 120px 0 80px;
             background: radial-gradient(circle at top right, rgba(13, 202, 240, 0.1), transparent),
                         radial-gradient(circle at bottom left, rgba(13, 110, 253, 0.05), transparent);
         }
-        .profile-container {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto;
-        }
+        .profile-container { position: relative; width: 280px; height: 280px; margin: 0 auto; }
         .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid var(--card-bg);
-            box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
-            position: relative;
-            z-index: 2;
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+            border: 5px solid var(--card-bg); box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
+            position: relative; z-index: 2;
         }
         .blob-bg {
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border-radius: 50%;
-            filter: blur(20px);
-            opacity: 0.4;
-            z-index: 1;
+            border-radius: 50%; filter: blur(20px); opacity: 0.4; z-index: 1;
         }
 
-        /* --- Global Sections --- */
         section { padding: 80px 0; }
-        .section-title {
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            position: relative;
-            display: inline-block;
-        }
+        .section-title { font-weight: 700; margin-bottom: 2.5rem; position: relative; display: inline-block; }
         .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px; left: 0;
-            width: 60px; height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
+            content: ''; position: absolute; bottom: -10px; left: 0;
+            width: 60px; height: 4px; background: var(--primary-color); border-radius: 2px;
         }
-        .text-center .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
+        .text-center .section-title::after { left: 50%; transform: translateX(-50%); }
 
-        /* --- Custom Badges (Skills) --- */
         .badge-custom {
-            padding: 10px 18px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin: 0 5px 12px 0;
-            background-color: rgba(13, 110, 253, 0.1);
-            color: var(--primary-color);
-            border: 1px solid rgba(13, 110, 253, 0.2);
-            display: inline-block;
-            transition: all 0.3s ease;
+            padding: 10px 18px; border-radius: 30px; font-weight: 600; font-size: 0.95rem;
+            margin: 0 5px 12px 0; background-color: rgba(13, 110, 253, 0.1);
+            color: var(--primary-color); border: 1px solid rgba(13, 110, 253, 0.2);
+            display: inline-block; transition: all 0.3s ease;
         }
-        [data-bs-theme="dark"] .badge-custom {
-            color: #7ab0ff;
-            background-color: rgba(13, 110, 253, 0.15);
-        }
-        .badge-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);
-        }
+        [data-bs-theme="dark"] .badge-custom { color: #7ab0ff; background-color: rgba(13, 110, 253, 0.15); }
 
-        /* --- Interactive Experience List --- */
+        /* Pengalaman Kerja (Link ke Halaman Lain) */
         .exp-list-item {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 22px 25px;
-            margin-bottom: 16px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            background-color: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 22px 25px; margin-bottom: 16px;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            text-decoration: none; color: inherit;
         }
         .exp-list-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-            box-shadow: 0 12px 25px rgba(13, 110, 253, 0.1);
+            transform: translateY(-5px); border-color: var(--primary-color);
+            box-shadow: 0 12px 25px rgba(13, 110, 253, 0.1); color: inherit;
         }
         .exp-list-item h5 { margin: 0; font-weight: 700; color: var(--text-color); }
-        .exp-list-item .icon-arrow {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
+        .exp-list-item .icon-arrow { color: var(--primary-color); font-size: 1.2rem; transition: transform 0.3s ease; }
         .exp-list-item:hover .icon-arrow { transform: translateX(8px); }
 
-        /* --- Modal (Pop-up Detail) --- */
-        .modal-content {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-        .modal-header {
-            border-bottom: 1px solid var(--border-color);
-            background-color: rgba(13, 110, 253, 0.05);
-        }
-        .doc-img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-top: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        /* --- Research Card --- */
+        /* Riset & Timeline */
         .research-card {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
+            background-color: var(--card-bg); border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         }
-        .research-card:hover { transform: translateY(-5px); }
-        .research-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        /* --- Timeline (Organisasi & Volunteering) --- */
-        .timeline-item {
-            position: relative;
-            padding-left: 45px;
-            margin-bottom: 35px;
-        }
+        .research-img { width: 100%; height: 280px; object-fit: cover; }
+        .timeline-item { position: relative; padding-left: 45px; margin-bottom: 35px; }
         .timeline-item::before {
-            content: '\f0c1';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0; top: 0;
-            color: var(--primary-color);
-            background: rgba(13,110,253,0.1);
-            width: 30px; height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
+            content: '\f0c1'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            position: absolute; left: 0; top: 0; color: var(--primary-color);
+            background: rgba(13,110,253,0.1); width: 30px; height: 30px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 12px;
         }
         .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 14px; top: 35px;
-            width: 2px; height: calc(100% - 5px);
-            background-color: rgba(13,110,253,0.2);
+            content: ''; position: absolute; left: 14px; top: 35px;
+            width: 2px; height: calc(100% - 5px); background-color: rgba(13,110,253,0.2);
         }
         .timeline-item:last-child::after { display: none; }
     </style>
@@ -262,15 +152,11 @@
                         <a href="mailto:emailanda@gmail.com" class="btn btn-primary rounded-pill px-4 py-2 shadow-sm">
                             <i class="fas fa-envelope me-2"></i>Hubungi Saya
                         </a>
-                        <a href="#" class="btn btn-outline-secondary rounded-pill px-4 py-2">
-                            <i class="fab fa-linkedin me-2"></i>LinkedIn
-                        </a>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="profile-container">
                         <div class="blob-bg"></div>
-                        <!-- FOTO PROFIL DARI USER -->
                         <img src="image_9fa08f.png" alt="Ahmad 'Adlul Khoiri" class="profile-img">
                     </div>
                 </div>
@@ -304,50 +190,47 @@
         </div>
     </section>
 
-    <!-- Pengalaman Kerja (List Interaktif) -->
+    <!-- Pengalaman Kerja (Sekarang Mengarah ke Halaman Baru) -->
     <section id="experience" class="bg-light" style="background-color: rgba(0,0,0,0.02);">
         <div class="container">
             <h2 class="section-title text-center d-block mb-5">Pengalaman Kerja & Magang</h2>
-            <p class="text-center text-muted mb-5">Ketuk/klik pada nama perusahaan untuk melihat detail pekerjaan dan dokumentasi.</p>
+            <p class="text-center text-muted mb-5">Klik pada nama perusahaan untuk melihat detail lengkap dan dokumentasi lapangan.</p>
             
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     
-                    <!-- Item Pengalaman 1 -->
-                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalBoma">
+                    <!-- Link menuju pengalaman.html -->
+                    <a href="pengalaman.html#boma" class="exp-list-item">
                         <div>
                             <h5>PT Boma Bisma Indra</h5>
                             <span class="text-muted small"><i class="fas fa-industry me-1"></i>Sektor Manufaktur Industri</span>
                         </div>
                         <i class="fas fa-arrow-right icon-arrow"></i>
-                    </div>
+                    </a>
 
-                    <!-- Item Pengalaman 2 -->
-                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalDok">
+                    <a href="pengalaman.html#dok" class="exp-list-item">
                         <div>
                             <h5>PT Dok Pantai Lamongan</h5>
                             <span class="text-muted small"><i class="fas fa-ship me-1"></i>Sektor Galangan Kapal</span>
                         </div>
                         <i class="fas fa-arrow-right icon-arrow"></i>
-                    </div>
+                    </a>
 
-                    <!-- Item Pengalaman 3 -->
-                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalMarina">
+                    <a href="pengalaman.html#marina" class="exp-list-item">
                         <div>
                             <h5>PT Marina Artha</h5>
                             <span class="text-muted small"><i class="fas fa-anchor me-1"></i>Sektor Maritim</span>
                         </div>
                         <i class="fas fa-arrow-right icon-arrow"></i>
-                    </div>
+                    </a>
 
-                    <!-- Item Pengalaman 4 -->
-                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalAIA">
+                    <a href="pengalaman.html#aia" class="exp-list-item">
                         <div>
                             <h5>CV AIA Electrical Neosantara</h5>
                             <span class="text-muted small"><i class="fas fa-bolt me-1"></i>Proyek Kelistrikan & Otomasi</span>
                         </div>
                         <i class="fas fa-arrow-right icon-arrow"></i>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -380,7 +263,7 @@
         </div>
     </section>
 
-    <!-- Organisasi & Volunteering -->
+    <!-- Organisasi -->
     <section id="organization" style="background-color: rgba(0,0,0,0.02);">
         <div class="container">
             <div class="row align-items-center">
@@ -390,17 +273,16 @@
                         <div class="timeline-item">
                             <h5 class="fw-bold">Anggota Himpunan Mahasiswa</h5>
                             <p class="text-primary fw-semibold mb-1">Politeknik Perkapalan Negeri Surabaya</p>
-                            <p class="text-muted small">Aktif dalam kegiatan akademik kampus, pengembangan teknologi, dan menyelenggarakan seminar kelistrikan maritim tingkat mahasiswa.</p>
+                            <p class="text-muted small">Aktif dalam kegiatan akademik kampus, pengembangan teknologi, dan menyelenggarakan seminar kelistrikan maritim.</p>
                         </div>
                         <div class="timeline-item">
                             <h5 class="fw-bold">Relawan Edukasi Energi</h5>
                             <p class="text-primary fw-semibold mb-1">Program Pengabdian Masyarakat</p>
-                            <p class="text-muted small">Berpartisipasi aktif dalam memberikan sosialisasi mengenai pentingnya efisiensi energi kelistrikan dan pengenalan dasar energi terbarukan.</p>
+                            <p class="text-muted small">Berpartisipasi aktif dalam memberikan sosialisasi mengenai efisiensi energi kelistrikan dan pengenalan dasar energi terbarukan.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <!-- FOTO DOKUMENTASI POLAROID DARI USER -->
                     <img src="watermarked_img_46099406987580659.png" alt="Galeri Memori Organisasi" class="img-fluid rounded-4 shadow-sm" style="transform: rotate(2deg); border: 8px solid white;">
                 </div>
             </div>
@@ -408,92 +290,15 @@
     </section>
 
     <footer class="text-center py-4 border-top" style="background-color: var(--card-bg);">
-        <p class="mb-0 text-muted small">© 2026 Ahmad 'Adlul Khoiri. Dirancang dengan Bootstrap 5.</p>
+        <p class="mb-0 text-muted small">© 2026 Ahmad 'Adlul Khoiri.</p>
     </footer>
 
-    <!-- ========================================== -->
-    <!-- MODAL POP-UPS (Konten Detail Pengalaman) -->
-    <!-- ========================================== -->
-
-    <!-- Modal 1: PT Boma Bisma Indra -->
-    <div class="modal fade" id="modalBoma" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">PT Boma Bisma Indra</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-industry me-2"></i>Sektor Manufaktur Industri</h6>
-                    <p>Terlibat dalam penanganan sistem kelistrikan untuk peralatan berat dan permesinan industri. Berfokus pada efisiensi dan keamanan instalasi sesuai dengan standar prosedur operasional pabrik.</p>
-                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/16222682638245418639_0" alt="Dokumentasi Boma Bisma Indra" class="doc-img">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2: PT Dok Pantai Lamongan -->
-    <div class="modal fade" id="modalDok" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">PT Dok Pantai Lamongan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-ship me-2"></i>Sektor Galangan Kapal (Shipyard)</h6>
-                    <p>Terjun langsung dalam proyek kelistrikan maritim. Tugas utama meliputi pemeliharaan preventif (*maintenance*), *troubleshooting* permasalahan kelistrikan harian, dan perbaikan panel listrik di atas kapal layar maupun kargo.</p>
-                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/7335249924419530510_0" alt="Dokumentasi Dok Pantai Lamongan" class="doc-img">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: PT Marina Artha -->
-    <div class="modal fade" id="modalMarina" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">PT Marina Artha</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-anchor me-2"></i>Sektor Maritim</h6>
-                    <p>Melakukan instalasi komponen elektrikal kapal baru maupun *repair*. Memastikan seluruh integrasi sistem kelistrikan navigasi dan propulsi memenuhi regulasi dan standar keamanan operasional maritim yang ketat.</p>
-                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/11923591757573465442_0" alt="Dokumentasi Marina Artha" class="doc-img">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4: CV AIA Electrical Neosantara -->
-    <div class="modal fade" id="modalAIA" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">CV AIA Electrical Neosantara</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-bolt me-2"></i>Sektor Proyek Kelistrikan & Otomasi</h6>
-                    <p>Terlibat penuh dalam eksekusi teknis di lapangan untuk perakitan panel kontrol (PLC/HMI). Memberikan pemahaman mendalam tentang *wiring*, pemrograman dasar, hingga penyelesaian masalah kontrol kelistrikan secara *real-time*.</p>
-                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13962525754430973098_0" alt="Dokumentasi AIA Electrical" class="doc-img">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap & Dark Mode Scripts -->
+    <!-- Bootstrap & Theme Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const themeToggleBtn = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
 
-        // Check local storage for theme preference
         if (localStorage.getItem('theme') === 'dark') {
             htmlElement.setAttribute('data-bs-theme', 'dark');
             updateBtnState('dark');
