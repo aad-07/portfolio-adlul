@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikat | Ahmad 'Adlul Khoiri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #f8f9fa; --text-color: #212529; --card-bg: #ffffff; --border-color: rgba(0,0,0,0.08); }
+        [data-bs-theme="dark"] { --bg-color: #121212; --text-color: #f8f9fa; --card-bg: #1e1e1e; --border-color: rgba(255,255,255,0.1); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        .navbar { background-color: var(--card-bg) !important; border-bottom: 1px solid var(--border-color); }
+        
+        .cert-card {
+            background-color: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 25px; height: 100%; text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: #0d6efd; }
+        .cert-icon { font-size: 3rem; color: #0d6efd; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Sertifikasi & Lisensi</h1>
+            <p class="text-muted">Bukti validasi keahlian teknis dan kepatuhan standar keselamatan industri.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Contoh Sertifikat 1 -->
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <i class="fas fa-certificate cert-icon"></i>
+                    <h5 class="fw-bold">Keselamatan & Kesehatan Kerja (K3) Kelistrikan</h5>
+                    <p class="text-muted small mt-2">Sertifikasi pemahaman prosedur instalasi panel arus kuat dan mitigasi kecelakaan kerja listrik sesuai standar industri.</p>
+                </div>
+            </div>
+            
+            <!-- Contoh Sertifikat 2 -->
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <i class="fas fa-microchip cert-icon"></i>
+                    <h5 class="fw-bold">Basic PLC & SCADA Programming</h5>
+                    <p class="text-muted small mt-2">Pelatihan intensif pemrograman ladder diagram dan perancangan antarmuka HMI/SCADA untuk otomasi pabrik.</p>
+                </div>
+            </div>
+
+            <!-- Contoh Sertifikat 3 -->
+            <div class="col-md-4">
+                <div class="cert-card">
+                    <i class="fas fa-ship cert-icon"></i>
+                    <h5 class="fw-bold">Marine Electrical System Standard</h5>
+                    <p class="text-muted small mt-2">Pemahaman regulasi kelistrikan maritim untuk perbaikan (repair) dan perancangan kapal (new-building).</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
