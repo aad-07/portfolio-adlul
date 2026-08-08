@@ -39,8 +39,6 @@
         }
         
         section { padding: 60px 0; }
-        .section-title { font-weight: 700; margin-bottom: 2rem; }
-        
         .badge-custom {
             padding: 8px 16px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
             margin: 0 5px 10px 0; background-color: rgba(13, 110, 253, 0.1); color: var(--primary-color);
@@ -88,7 +86,6 @@
         </div>
     </header>
 
-    <!-- Menu Dasbor -->
     <section class="container pb-5">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
@@ -114,8 +111,18 @@
                 <h5 class="fw-bold mb-3 mt-4 text-warning">🤝 Organisasi</h5>
                 <a href="organisasi.html" class="menu-link-card">
                     <div>
-                        <h5>Organisasi & Volunteering</h5>
-                        <span class="text-muted small">Himpunan Mahasiswa & Pengabdian Masyarakat</span>
+                        <h5>Riwayat Organisasi Kampus</h5>
+                        <span class="text-muted small">Himpunan Mahasiswa & Kepanitiaan</span>
+                    </div>
+                    <i class="fas fa-arrow-right icon-arrow"></i>
+                </a>
+
+                <!-- MENU BARU: VOLUNTEERING -->
+                <h5 class="fw-bold mb-3 mt-4 text-danger">🌍 Volunteering</h5>
+                <a href="volunteer.html" class="menu-link-card">
+                    <div>
+                        <h5>Pengabdian Masyarakat</h5>
+                        <span class="text-muted small">Relawan Edukasi Energi & Kegiatan Sosial</span>
                     </div>
                     <i class="fas fa-arrow-right icon-arrow"></i>
                 </a>
@@ -140,19 +147,12 @@
     <script>
         const themeToggleBtn = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
-        if (localStorage.getItem('theme') === 'dark') {
-            htmlElement.setAttribute('data-bs-theme', 'dark');
-            updateBtnState('dark');
-        }
+        if (localStorage.getItem('theme') === 'dark') { htmlElement.setAttribute('data-bs-theme', 'dark'); updateBtnState('dark'); }
         themeToggleBtn.addEventListener('click', () => {
             if (htmlElement.getAttribute('data-bs-theme') === 'light') {
-                htmlElement.setAttribute('data-bs-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                updateBtnState('dark');
+                htmlElement.setAttribute('data-bs-theme', 'dark'); localStorage.setItem('theme', 'dark'); updateBtnState('dark');
             } else {
-                htmlElement.setAttribute('data-bs-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                updateBtnState('light');
+                htmlElement.setAttribute('data-bs-theme', 'light'); localStorage.setItem('theme', 'light'); updateBtnState('light');
             }
         });
         function updateBtnState(theme) {
