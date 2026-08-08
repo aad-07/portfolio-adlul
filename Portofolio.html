@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Ahmad 'Adlul Khoiri</title>
+    
+    <!-- Menggunakan Bootstrap 5 untuk CSS Framework (Desain Instan) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS Tambahan -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            color: white;
+            text-align: center;
+        }
+        [data-bs-theme="dark"] .hero-section {
+            background: linear-gradient(135deg, #0b5ed7, #055160);
+        }
+        .skill-badge {
+            font-size: 1rem;
+            padding: 10px 15px;
+            margin: 5px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        section {
+            padding: 60px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ahmad 'Adlul Khoiri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Pengalaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Riset</a></li>
+                    <li class="nav-item">
+                        <!-- Tombol Interaktif Mode Gelap/Terang dari JavaScript -->
+                        <button id="themeToggle" class="btn btn-outline-light btn-sm ms-3 mt-1">🌙 Dark Mode</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Ahmad 'Adlul Khoiri</h1>
+            <p class="lead">Electrical Engineering Graduate | Industrial Automation, Marine Electrical, & Renewable Energy</p>
+        </div>
+    </header>
+
+    <!-- Tentang & Keahlian -->
+    <section id="about" class="container">
+        <div class="row text-center mb-4">
+            <div class="col-md-8 mx-auto">
+                <h2 class="fw-bold mb-3">Tentang Saya</h2>
+                <p>
+                    Saya adalah lulusan Teknik Kelistrikan dari Politeknik Perkapalan Negeri Surabaya (PPNS) dengan rekam jejak pengalaman lapangan yang kuat di industri kelistrikan maritim dan manufaktur. Terbiasa menangani instalasi hingga pemeliharaan kelistrikan secara aman dan efisien, serta memiliki fokus besar pada perancangan sistem kontrol otomatisasi.
+                </p>
+            </div>
+        </div>
+        <div class="row text-center mt-4">
+            <div class="col-12">
+                <h4 class="mb-3">Keahlian Utama (Skills)</h4>
+                <span class="badge bg-primary skill-badge">Programmable Logic Controllers (PLC)</span>
+                <span class="badge bg-primary skill-badge">SCADA Systems</span>
+                <span class="badge bg-primary skill-badge">Human-Machine Interface (HMI)</span>
+                <span class="badge bg-primary skill-badge">Internet of Things (IoT)</span>
+                <span class="badge bg-success skill-badge">MPPT Control</span>
+                <span class="badge bg-success skill-badge">ANFIS Algorithm</span>
+                <span class="badge bg-secondary skill-badge">Marine Electrical</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman Kerja (Grid) -->
+    <section id="experience" class="bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Pengalaman Kerja & Magang</h2>
+            <div class="row g-4">
+                
+                <!-- Perusahaan 1 -->
+                <div class="col-md-6">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">PT Boma Bisma Indra</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sektor Manufaktur Industri</h6>
+                            <p class="card-text">Terlibat dalam penanganan sistem kelistrikan untuk peralatan berat dan permesinan industri. Berfokus pada efisiensi dan keamanan instalasi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perusahaan 2 -->
+                <div class="col-md-6">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">PT Dok Pantai Lamongan</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sektor Galangan Kapal (Shipyard)</h6>
+                            <p class="card-text">Terjun langsung dalam proyek kelistrikan maritim, termasuk pemeliharaan (*maintenance*), *troubleshooting*, dan perbaikan panel listrik kapal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perusahaan 3 -->
+                <div class="col-md-6">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">PT Marina Artha</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sektor Maritim</h6>
+                            <p class="card-text">Melakukan instalasi komponen elektrikal kapal, memastikan sistem kelistrikan memenuhi standar keamanan dan keandalan operasional maritim.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perusahaan 4 -->
+                <div class="col-md-6">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">CV AIA Electrical Neosantara</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sektor Proyek Kelistrikan & Otomasi</h6>
+                            <p class="card-text">Terlibat dalam pengerjaan teknis di lapangan untuk berbagai proyek kelistrikan, memberikan pemahaman mendalam tentang eksekusi kontrol kelistrikan riil.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Riset & Tugas Akhir -->
+    <section id="research" class="container">
+        <h2 class="text-center fw-bold mb-4">Riset & Tugas Akhir Terapan</h2>
+        <div class="card bg-dark text-white text-center p-5">
+            <h3 class="fw-bold text-info">Optimasi Pembangkit Listrik Tenaga Angin (PLTB)</h3>
+            <h5 class="mt-3">Menggunakan Maximum Power Point Tracking (MPPT) Berbasis Algoritma ANFIS</h5>
+            <p class="mt-4 w-75 mx-auto">
+                Penelitian ini difokuskan pada perancangan algoritma kecerdasan buatan (*Adaptive Neuro-Fuzzy Inference System*) untuk mengoptimalkan daya keluaran pada turbin angin secara otomatis, beradaptasi dengan perubahan cuaca dan kecepatan angin secara *real-time*.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0">© 2026 Ahmad 'Adlul Khoiri. Terbuka untuk peluang kerja (*Open to Work*).</p>
+    </footer>
+
+    <!-- Bootstrap JS untuk interaktivitas komponen dasar -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.css"></script>
+
+    <!-- JavaScript Khusus untuk Dark Mode -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            
+            if (currentTheme === 'light') {
+                htmlElement.setAttribute('data-bs-theme', 'dark');
+                themeToggleBtn.innerHTML = '☀️ Light Mode';
+                themeToggleBtn.classList.remove('btn-outline-light');
+                themeToggleBtn.classList.add('btn-outline-warning');
+            } else {
+                htmlElement.setAttribute('data-bs-theme', 'light');
+                themeToggleBtn.innerHTML = '🌙 Dark Mode';
+                themeToggleBtn.classList.remove('btn-outline-warning');
+                themeToggleBtn.classList.add('btn-outline-light');
+            }
+        });
+    </script>
+</body>
+</html>
