@@ -5,191 +5,522 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio | Ahmad 'Adlul Khoiri</title>
     
-    <!-- Menggunakan Bootstrap 5 untuk CSS Framework (Desain Instan) -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans (Modern & Profesional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS Tambahan -->
     <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #0dcaf0;
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --border-color: rgba(0,0,0,0.08);
+        }
+
+        /* Variabel untuk Mode Gelap */
+        [data-bs-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f8f9fa;
+            --card-bg: #1e1e1e;
+            --border-color: rgba(255,255,255,0.1);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease;
             scroll-behavior: smooth;
-            transition: background-color 0.3s, color 0.3s;
         }
+
+        /* --- Navigasi --- */
+        .navbar {
+            backdrop-filter: blur(15px);
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.4s ease;
+        }
+        [data-bs-theme="dark"] .navbar {
+            background-color: rgba(18, 18, 18, 0.8) !important;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-color) !important;
+            margin: 0 5px;
+        }
+        .nav-link:hover { color: var(--primary-color) !important; }
+
+        /* --- Hero Section --- */
         .hero-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
-            color: white;
-            text-align: center;
+            padding: 120px 0 80px;
+            background: radial-gradient(circle at top right, rgba(13, 202, 240, 0.1), transparent),
+                        radial-gradient(circle at bottom left, rgba(13, 110, 253, 0.05), transparent);
         }
-        [data-bs-theme="dark"] .hero-section {
-            background: linear-gradient(135deg, #0b5ed7, #055160);
+        .profile-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
         }
-        .skill-badge {
-            font-size: 1rem;
-            padding: 10px 15px;
-            margin: 5px;
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--card-bg);
+            box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
+            position: relative;
+            z-index: 2;
         }
-        .card {
-            border: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        .blob-bg {
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        /* --- Global Sections --- */
+        section { padding: 80px 0; }
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px; left: 0;
+            width: 60px; height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Custom Badges (Skills) --- */
+        .badge-custom {
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0 5px 12px 0;
+            background-color: rgba(13, 110, 253, 0.1);
+            color: var(--primary-color);
+            border: 1px solid rgba(13, 110, 253, 0.2);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        [data-bs-theme="dark"] .badge-custom {
+            color: #7ab0ff;
+            background-color: rgba(13, 110, 253, 0.15);
+        }
+        .badge-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);
+        }
+
+        /* --- Interactive Experience List --- */
+        .exp-list-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px 25px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .exp-list-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 12px 25px rgba(13, 110, 253, 0.1);
+        }
+        .exp-list-item h5 { margin: 0; font-weight: 700; color: var(--text-color); }
+        .exp-list-item .icon-arrow {
+            color: var(--primary-color);
+            font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
-        .card:hover {
-            transform: translateY(-5px);
+        .exp-list-item:hover .icon-arrow { transform: translateX(8px); }
+
+        /* --- Modal (Pop-up Detail) --- */
+        .modal-content {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
         }
-        section {
-            padding: 60px 0;
+        .modal-header {
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(13, 110, 253, 0.05);
         }
+        .doc-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Research Card --- */
+        .research-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .research-card:hover { transform: translateY(-5px); }
+        .research-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        /* --- Timeline (Organisasi & Volunteering) --- */
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 35px;
+        }
+        .timeline-item::before {
+            content: '\f0c1';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0; top: 0;
+            color: var(--primary-color);
+            background: rgba(13,110,253,0.1);
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 14px; top: 35px;
+            width: 2px; height: calc(100% - 5px);
+            background-color: rgba(13,110,253,0.2);
+        }
+        .timeline-item:last-child::after { display: none; }
     </style>
 </head>
 <body>
 
     <!-- Navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Ahmad 'Adlul Khoiri</a>
+            <a class="navbar-brand fw-bold text-primary" href="#">AAK.</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Pengalaman</a></li>
                     <li class="nav-item"><a class="nav-link" href="#research">Riset</a></li>
-                    <li class="nav-item">
-                        <!-- Tombol Interaktif Mode Gelap/Terang dari JavaScript -->
-                        <button id="themeToggle" class="btn btn-outline-light btn-sm ms-3 mt-1">🌙 Dark Mode</button>
+                    <li class="nav-item"><a class="nav-link" href="#organization">Organisasi</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button id="themeToggle" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                            <i class="fas fa-moon me-1"></i> Dark Mode
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header / Hero Section -->
+    <!-- Hero Section -->
     <header class="hero-section">
         <div class="container">
-            <h1 class="display-4 fw-bold">Ahmad 'Adlul Khoiri</h1>
-            <p class="lead">Electrical Engineering Graduate | Industrial Automation, Marine Electrical, & Renewable Energy</p>
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start mb-5 mb-lg-0">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill">Open to Work</span>
+                    <h1 class="display-4 fw-bold mb-3">Ahmad 'Adlul Khoiri</h1>
+                    <p class="lead text-muted mb-4">Electrical Engineering Graduate | Industrial Automation, Marine Electrical, & Renewable Energy</p>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+                        <a href="mailto:emailanda@gmail.com" class="btn btn-primary rounded-pill px-4 py-2 shadow-sm">
+                            <i class="fas fa-envelope me-2"></i>Hubungi Saya
+                        </a>
+                        <a href="#" class="btn btn-outline-secondary rounded-pill px-4 py-2">
+                            <i class="fab fa-linkedin me-2"></i>LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="profile-container">
+                        <div class="blob-bg"></div>
+                        <!-- FOTO PROFIL DARI USER -->
+                        <img src="image_9fa08f.png" alt="Ahmad 'Adlul Khoiri" class="profile-img">
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Tentang & Keahlian -->
-    <section id="about" class="container">
-        <div class="row text-center mb-4">
-            <div class="col-md-8 mx-auto">
-                <h2 class="fw-bold mb-3">Tentang Saya</h2>
-                <p>
-                    Saya adalah lulusan Teknik Kelistrikan dari Politeknik Perkapalan Negeri Surabaya (PPNS) dengan rekam jejak pengalaman lapangan yang kuat di industri kelistrikan maritim dan manufaktur. Terbiasa menangani instalasi hingga pemeliharaan kelistrikan secara aman dan efisien, serta memiliki fokus besar pada perancangan sistem kontrol otomatisasi.
-                </p>
-            </div>
-        </div>
-        <div class="row text-center mt-4">
-            <div class="col-12">
-                <h4 class="mb-3">Keahlian Utama (Skills)</h4>
-                <span class="badge bg-primary skill-badge">Programmable Logic Controllers (PLC)</span>
-                <span class="badge bg-primary skill-badge">SCADA Systems</span>
-                <span class="badge bg-primary skill-badge">Human-Machine Interface (HMI)</span>
-                <span class="badge bg-primary skill-badge">Internet of Things (IoT)</span>
-                <span class="badge bg-success skill-badge">MPPT Control</span>
-                <span class="badge bg-success skill-badge">ANFIS Algorithm</span>
-                <span class="badge bg-secondary skill-badge">Marine Electrical</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pengalaman Kerja (Grid) -->
-    <section id="experience" class="bg-light">
+    <section id="about">
         <div class="container">
-            <h2 class="text-center fw-bold mb-5">Pengalaman Kerja & Magang</h2>
-            <div class="row g-4">
-                
-                <!-- Perusahaan 1 -->
-                <div class="col-md-6">
-                    <div class="card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary fw-bold">PT Boma Bisma Indra</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sektor Manufaktur Industri</h6>
-                            <p class="card-text">Terlibat dalam penanganan sistem kelistrikan untuk peralatan berat dan permesinan industri. Berfokus pada efisiensi dan keamanan instalasi.</p>
-                        </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Saya adalah lulusan Teknik Kelistrikan dari Politeknik Perkapalan Negeri Surabaya (PPNS) dengan rekam jejak pengalaman lapangan yang kuat di industri kelistrikan maritim dan manufaktur. Terbiasa menangani instalasi hingga pemeliharaan kelistrikan secara aman dan efisien, serta memiliki fokus besar pada perancangan sistem kontrol otomatisasi.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Keahlian Utama</h2>
+                    <div>
+                        <span class="badge-custom"><i class="fas fa-microchip me-2"></i>PLC</span>
+                        <span class="badge-custom"><i class="fas fa-desktop me-2"></i>SCADA Systems</span>
+                        <span class="badge-custom"><i class="fas fa-tablet-alt me-2"></i>HMI</span>
+                        <span class="badge-custom"><i class="fas fa-wifi me-2"></i>IoT</span>
+                        <span class="badge-custom"><i class="fas fa-solar-panel me-2"></i>MPPT Control</span>
+                        <span class="badge-custom"><i class="fas fa-brain me-2"></i>ANFIS Algorithm</span>
+                        <span class="badge-custom"><i class="fas fa-ship me-2"></i>Marine Electrical</span>
                     </div>
                 </div>
-
-                <!-- Perusahaan 2 -->
-                <div class="col-md-6">
-                    <div class="card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary fw-bold">PT Dok Pantai Lamongan</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sektor Galangan Kapal (Shipyard)</h6>
-                            <p class="card-text">Terjun langsung dalam proyek kelistrikan maritim, termasuk pemeliharaan (*maintenance*), *troubleshooting*, dan perbaikan panel listrik kapal.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 3 -->
-                <div class="col-md-6">
-                    <div class="card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary fw-bold">PT Marina Artha</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sektor Maritim</h6>
-                            <p class="card-text">Melakukan instalasi komponen elektrikal kapal, memastikan sistem kelistrikan memenuhi standar keamanan dan keandalan operasional maritim.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Perusahaan 4 -->
-                <div class="col-md-6">
-                    <div class="card h-100 p-3">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary fw-bold">CV AIA Electrical Neosantara</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sektor Proyek Kelistrikan & Otomasi</h6>
-                            <p class="card-text">Terlibat dalam pengerjaan teknis di lapangan untuk berbagai proyek kelistrikan, memberikan pemahaman mendalam tentang eksekusi kontrol kelistrikan riil.</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Riset & Tugas Akhir -->
-    <section id="research" class="container">
-        <h2 class="text-center fw-bold mb-4">Riset & Tugas Akhir Terapan</h2>
-        <div class="card bg-dark text-white text-center p-5">
-            <h3 class="fw-bold text-info">Optimasi Pembangkit Listrik Tenaga Angin (PLTB)</h3>
-            <h5 class="mt-3">Menggunakan Maximum Power Point Tracking (MPPT) Berbasis Algoritma ANFIS</h5>
-            <p class="mt-4 w-75 mx-auto">
-                Penelitian ini difokuskan pada perancangan algoritma kecerdasan buatan (*Adaptive Neuro-Fuzzy Inference System*) untuk mengoptimalkan daya keluaran pada turbin angin secara otomatis, beradaptasi dengan perubahan cuaca dan kecepatan angin secara *real-time*.
-            </p>
+    <!-- Pengalaman Kerja (List Interaktif) -->
+    <section id="experience" class="bg-light" style="background-color: rgba(0,0,0,0.02);">
+        <div class="container">
+            <h2 class="section-title text-center d-block mb-5">Pengalaman Kerja & Magang</h2>
+            <p class="text-center text-muted mb-5">Ketuk/klik pada nama perusahaan untuk melihat detail pekerjaan dan dokumentasi.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    
+                    <!-- Item Pengalaman 1 -->
+                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalBoma">
+                        <div>
+                            <h5>PT Boma Bisma Indra</h5>
+                            <span class="text-muted small"><i class="fas fa-industry me-1"></i>Sektor Manufaktur Industri</span>
+                        </div>
+                        <i class="fas fa-arrow-right icon-arrow"></i>
+                    </div>
+
+                    <!-- Item Pengalaman 2 -->
+                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalDok">
+                        <div>
+                            <h5>PT Dok Pantai Lamongan</h5>
+                            <span class="text-muted small"><i class="fas fa-ship me-1"></i>Sektor Galangan Kapal</span>
+                        </div>
+                        <i class="fas fa-arrow-right icon-arrow"></i>
+                    </div>
+
+                    <!-- Item Pengalaman 3 -->
+                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalMarina">
+                        <div>
+                            <h5>PT Marina Artha</h5>
+                            <span class="text-muted small"><i class="fas fa-anchor me-1"></i>Sektor Maritim</span>
+                        </div>
+                        <i class="fas fa-arrow-right icon-arrow"></i>
+                    </div>
+
+                    <!-- Item Pengalaman 4 -->
+                    <div class="exp-list-item" data-bs-toggle="modal" data-bs-target="#modalAIA">
+                        <div>
+                            <h5>CV AIA Electrical Neosantara</h5>
+                            <span class="text-muted small"><i class="fas fa-bolt me-1"></i>Proyek Kelistrikan & Otomasi</span>
+                        </div>
+                        <i class="fas fa-arrow-right icon-arrow"></i>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <p class="mb-0">© 2026 Ahmad 'Adlul Khoiri. Terbuka untuk peluang kerja (*Open to Work*).</p>
+    <!-- Riset -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title text-center d-block mb-5">Riset & Tugas Akhir Terapan</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="research-card row g-0">
+                        <div class="col-md-5">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/12499372529815825609_0" alt="Ilustrasi Riset PLTB & AI" class="research-img">
+                        </div>
+                        <div class="col-md-7 d-flex align-items-center">
+                            <div class="p-4 p-lg-5">
+                                <span class="badge bg-success mb-2">Renewable Energy & AI</span>
+                                <h3 class="fw-bold text-primary mb-3">Optimasi Pembangkit Listrik Tenaga Angin (PLTB)</h3>
+                                <h6 class="fw-bold mb-3">Menggunakan MPPT Berbasis Algoritma ANFIS</h6>
+                                <p class="text-muted">
+                                    Penelitian ini difokuskan pada perancangan algoritma kecerdasan buatan (Adaptive Neuro-Fuzzy Inference System) untuk mengoptimalkan daya keluaran pada turbin angin secara otomatis, beradaptasi dengan perubahan cuaca dan kecepatan angin secara real-time.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organisasi & Volunteering -->
+    <section id="organization" style="background-color: rgba(0,0,0,0.02);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title">Organisasi & Volunteering</h2>
+                    <div class="mt-4">
+                        <div class="timeline-item">
+                            <h5 class="fw-bold">Anggota Himpunan Mahasiswa</h5>
+                            <p class="text-primary fw-semibold mb-1">Politeknik Perkapalan Negeri Surabaya</p>
+                            <p class="text-muted small">Aktif dalam kegiatan akademik kampus, pengembangan teknologi, dan menyelenggarakan seminar kelistrikan maritim tingkat mahasiswa.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="fw-bold">Relawan Edukasi Energi</h5>
+                            <p class="text-primary fw-semibold mb-1">Program Pengabdian Masyarakat</p>
+                            <p class="text-muted small">Berpartisipasi aktif dalam memberikan sosialisasi mengenai pentingnya efisiensi energi kelistrikan dan pengenalan dasar energi terbarukan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- FOTO DOKUMENTASI POLAROID DARI USER -->
+                    <img src="watermarked_img_46099406987580659.png" alt="Galeri Memori Organisasi" class="img-fluid rounded-4 shadow-sm" style="transform: rotate(2deg); border: 8px solid white;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 border-top" style="background-color: var(--card-bg);">
+        <p class="mb-0 text-muted small">© 2026 Ahmad 'Adlul Khoiri. Dirancang dengan Bootstrap 5.</p>
     </footer>
 
-    <!-- Bootstrap JS untuk interaktivitas komponen dasar -->
+    <!-- ========================================== -->
+    <!-- MODAL POP-UPS (Konten Detail Pengalaman) -->
+    <!-- ========================================== -->
+
+    <!-- Modal 1: PT Boma Bisma Indra -->
+    <div class="modal fade" id="modalBoma" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">PT Boma Bisma Indra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-industry me-2"></i>Sektor Manufaktur Industri</h6>
+                    <p>Terlibat dalam penanganan sistem kelistrikan untuk peralatan berat dan permesinan industri. Berfokus pada efisiensi dan keamanan instalasi sesuai dengan standar prosedur operasional pabrik.</p>
+                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/16222682638245418639_0" alt="Dokumentasi Boma Bisma Indra" class="doc-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: PT Dok Pantai Lamongan -->
+    <div class="modal fade" id="modalDok" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">PT Dok Pantai Lamongan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-ship me-2"></i>Sektor Galangan Kapal (Shipyard)</h6>
+                    <p>Terjun langsung dalam proyek kelistrikan maritim. Tugas utama meliputi pemeliharaan preventif (*maintenance*), *troubleshooting* permasalahan kelistrikan harian, dan perbaikan panel listrik di atas kapal layar maupun kargo.</p>
+                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/7335249924419530510_0" alt="Dokumentasi Dok Pantai Lamongan" class="doc-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: PT Marina Artha -->
+    <div class="modal fade" id="modalMarina" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">PT Marina Artha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-anchor me-2"></i>Sektor Maritim</h6>
+                    <p>Melakukan instalasi komponen elektrikal kapal baru maupun *repair*. Memastikan seluruh integrasi sistem kelistrikan navigasi dan propulsi memenuhi regulasi dan standar keamanan operasional maritim yang ketat.</p>
+                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/11923591757573465442_0" alt="Dokumentasi Marina Artha" class="doc-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: CV AIA Electrical Neosantara -->
+    <div class="modal fade" id="modalAIA" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">CV AIA Electrical Neosantara</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h6 class="text-primary fw-bold mb-3"><i class="fas fa-bolt me-2"></i>Sektor Proyek Kelistrikan & Otomasi</h6>
+                    <p>Terlibat penuh dalam eksekusi teknis di lapangan untuk perakitan panel kontrol (PLC/HMI). Memberikan pemahaman mendalam tentang *wiring*, pemrograman dasar, hingga penyelesaian masalah kontrol kelistrikan secara *real-time*.</p>
+                    <h6 class="mt-4 fw-bold"><i class="fas fa-camera text-muted me-2"></i>Dokumentasi Lapangan:</h6>
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13962525754430973098_0" alt="Dokumentasi AIA Electrical" class="doc-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & Dark Mode Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript Khusus untuk Dark Mode -->
     <script>
         const themeToggleBtn = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
 
+        // Check local storage for theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            updateBtnState('dark');
+        }
+
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-bs-theme');
-            
             if (currentTheme === 'light') {
                 htmlElement.setAttribute('data-bs-theme', 'dark');
-                themeToggleBtn.innerHTML = '☀️ Light Mode';
-                themeToggleBtn.classList.remove('btn-outline-light');
-                themeToggleBtn.classList.add('btn-outline-warning');
+                localStorage.setItem('theme', 'dark');
+                updateBtnState('dark');
             } else {
                 htmlElement.setAttribute('data-bs-theme', 'light');
-                themeToggleBtn.innerHTML = '🌙 Dark Mode';
-                themeToggleBtn.classList.remove('btn-outline-warning');
-                themeToggleBtn.classList.add('btn-outline-light');
+                localStorage.setItem('theme', 'light');
+                updateBtnState('light');
             }
         });
+
+        function updateBtnState(theme) {
+            if(theme === 'dark') {
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun me-1"></i> Light Mode';
+                themeToggleBtn.classList.replace('btn-outline-primary', 'btn-outline-warning');
+            } else {
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon me-1"></i> Dark Mode';
+                themeToggleBtn.classList.replace('btn-outline-warning', 'btn-outline-primary');
+            }
+        }
     </script>
 </body>
 </html>
