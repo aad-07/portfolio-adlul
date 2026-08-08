@@ -29,41 +29,52 @@
         [data-bs-theme="dark"] .navbar { background-color: rgba(18, 18, 18, 0.8) !important; }
         
         .hero-section {
-            padding: 100px 0 60px;
+            padding: 80px 0 60px;
             background: radial-gradient(circle at top right, rgba(13, 202, 240, 0.1), transparent),
                         radial-gradient(circle at bottom left, rgba(13, 110, 253, 0.05), transparent);
         }
-        .profile-img {
-            width: 240px; height: 240px; object-fit: cover; border-radius: 50%;
-            border: 5px solid var(--card-bg); box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
+        .profile-img-small {
+            width: 90px; height: 90px; object-fit: cover; border-radius: 50%;
+            border: 3px solid var(--card-bg); box-shadow: 0 5px 15px rgba(13, 110, 253, 0.15);
         }
         
-        section { padding: 60px 0; }
         .badge-custom {
-            padding: 8px 16px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
-            margin: 0 5px 10px 0; background-color: rgba(13, 110, 253, 0.1); color: var(--primary-color);
+            padding: 8px 16px; border-radius: 30px; font-weight: 600; font-size: 0.85rem;
+            margin: 0 4px 8px 0; background-color: rgba(13, 110, 253, 0.1); color: var(--primary-color);
             border: 1px solid rgba(13, 110, 253, 0.2); display: inline-block;
         }
         [data-bs-theme="dark"] .badge-custom { color: #7ab0ff; background-color: rgba(13, 110, 253, 0.15); }
 
+        /* Styling Kontak */
+        .contact-btn {
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
         /* Menu Card Links */
         .menu-link-card {
             background-color: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 20px 25px; margin-bottom: 16px;
+            border-radius: 12px; padding: 18px 25px; margin-bottom: 16px;
             display: flex; justify-content: space-between; align-items: center;
             transition: all 0.3s ease; text-decoration: none; color: inherit;
         }
         .menu-link-card:hover {
             transform: translateY(-4px); border-color: var(--primary-color);
-            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.1); color: inherit;
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.08); color: inherit;
         }
-        .menu-link-card h5 { margin: 0; font-weight: 700; }
-        .icon-arrow { color: var(--primary-color); font-size: 1.2rem; transition: transform 0.3s ease; }
-        .menu-link-card:hover .icon-arrow { transform: translateX(8px); }
+        .menu-link-card h6 { margin: 0; font-weight: 700; font-size: 1.05rem; }
+        .icon-arrow { color: var(--primary-color); font-size: 1.1rem; transition: transform 0.3s ease; }
+        .menu-link-card:hover .icon-arrow { transform: translateX(5px); }
     </style>
 </head>
 <body>
 
+    <!-- Navigasi -->
     <nav class="navbar navbar-expand-lg sticky-top py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand fw-bold text-primary" href="#">AAK.</a>
@@ -73,65 +84,95 @@
         </div>
     </nav>
 
+    <!-- Header / Hero Section (Terdapat Intro & Kontak Baru) -->
     <header class="hero-section text-center">
         <div class="container">
-            <img src="image_9fa08f.png" alt="Profil" class="profile-img mb-4">
-            <h1 class="display-5 fw-bold mb-2">Ahmad 'Adlul Khoiri</h1>
-            <p class="lead text-muted mb-4">Electrical Engineering Graduate | Industrial Automation, Marine Electrical, & Renewable Energy</p>
-            <div>
+            <img src="image_9fa08f.png" alt="Profil" class="profile-img-small mb-3">
+            <h2 class="fw-bold mb-2">Ahmad 'Adlul Khoiri</h2>
+            <p class="text-muted mb-4 small">Electrical Engineering Graduate | Industrial Automation, Marine Electrical, & Renewable Energy</p>
+            
+            <!-- Introduction Singkat -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-6">
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.7;">
+                        Lulusan Teknik Kelistrikan dari Politeknik Perkapalan Negeri Surabaya (PPNS) dengan rekam jejak pengalaman lapangan di industri manufaktur dan maritim. Terbiasa menangani instalasi, pemeliharaan (*maintenance*), dan perancangan sistem kontrol otomatisasi yang aman serta efisien.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Badges Keahlian -->
+            <div class="mb-4">
                 <span class="badge-custom"><i class="fas fa-microchip me-1"></i> PLC</span>
                 <span class="badge-custom"><i class="fas fa-desktop me-1"></i> SCADA</span>
                 <span class="badge-custom"><i class="fas fa-solar-panel me-1"></i> MPPT & ANFIS</span>
             </div>
+
+            <!-- Informasi Kontak -->
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="mailto:emailanda@gmail.com" class="btn btn-outline-danger rounded-pill px-4 py-2 contact-btn">
+                    <i class="fas fa-envelope me-2"></i>Email
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline-success rounded-pill px-4 py-2 contact-btn">
+                    <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                </a>
+                <a href="https://linkedin.com/in/usernameanda" target="_blank" class="btn btn-outline-primary rounded-pill px-4 py-2 contact-btn">
+                    <i class="fab fa-linkedin me-2"></i>LinkedIn
+                </a>
+            </div>
         </div>
     </header>
 
+    <!-- Menu Dasbor -->
     <section class="container pb-5">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
+            <div class="col-md-10 col-lg-7">
                 
-                <h5 class="fw-bold mb-3 mt-4 text-primary">💼 Pengalaman Kerja</h5>
+                <!-- 1. Pengalaman Kerja -->
+                <h6 class="fw-bold mb-3 mt-4" style="color: #6c757d;">💼 Pengalaman Kerja</h6>
                 <a href="pengalaman.html" class="menu-link-card">
                     <div>
-                        <h5>Detail Pengalaman Lapangan</h5>
+                        <h6>Detail Pengalaman Lapangan</h6>
                         <span class="text-muted small">Industri Manufaktur, Galangan Kapal & Otomasi</span>
                     </div>
                     <i class="fas fa-arrow-right icon-arrow"></i>
                 </a>
 
-                <h5 class="fw-bold mb-3 mt-4 text-success">🔬 Riset & Akademik</h5>
+                <!-- 2. Riset & Akademik -->
+                <h6 class="fw-bold mb-3 mt-4" style="color: #198754;">🔬 Riset & Akademik</h6>
                 <a href="riset.html" class="menu-link-card">
                     <div>
-                        <h5>Tugas Akhir Terapan</h5>
+                        <h6>Tugas Akhir Terapan</h6>
                         <span class="text-muted small">Simulasi MPPT Berbasis Algoritma ANFIS (PLTB)</span>
                     </div>
                     <i class="fas fa-arrow-right icon-arrow"></i>
                 </a>
 
-                <h5 class="fw-bold mb-3 mt-4 text-warning">🤝 Organisasi</h5>
+                <!-- 3. Lisensi & Keahlian (Pindah ke sini) -->
+                <h6 class="fw-bold mb-3 mt-4" style="color: #0dcaf0;">📜 Lisensi & Keahlian</h6>
+                <a href="sertifikat.html" class="menu-link-card">
+                    <div>
+                        <h6>Sertifikat Kompetensi</h6>
+                        <span class="text-muted small">K3, Pelatihan Teknis, dan Penghargaan</span>
+                    </div>
+                    <i class="fas fa-arrow-right icon-arrow"></i>
+                </a>
+
+                <!-- 4. Organisasi -->
+                <h6 class="fw-bold mb-3 mt-4" style="color: #ffc107;">🤝 Organisasi</h6>
                 <a href="organisasi.html" class="menu-link-card">
                     <div>
-                        <h5>Riwayat Organisasi Kampus</h5>
+                        <h6>Riwayat Organisasi Kampus</h6>
                         <span class="text-muted small">Himpunan Mahasiswa & Kepanitiaan</span>
                     </div>
                     <i class="fas fa-arrow-right icon-arrow"></i>
                 </a>
 
-                <!-- MENU BARU: VOLUNTEERING -->
-                <h5 class="fw-bold mb-3 mt-4 text-danger">🌍 Volunteering</h5>
+                <!-- 5. Volunteering -->
+                <h6 class="fw-bold mb-3 mt-4" style="color: #dc3545;">🌍 Volunteering</h6>
                 <a href="volunteer.html" class="menu-link-card">
                     <div>
-                        <h5>Pengabdian Masyarakat</h5>
+                        <h6>Pengabdian Masyarakat</h6>
                         <span class="text-muted small">Relawan Edukasi Energi & Kegiatan Sosial</span>
-                    </div>
-                    <i class="fas fa-arrow-right icon-arrow"></i>
-                </a>
-
-                <h5 class="fw-bold mb-3 mt-4 text-info">📜 Lisensi & Keahlian</h5>
-                <a href="sertifikat.html" class="menu-link-card">
-                    <div>
-                        <h5>Sertifikat Kompetensi</h5>
-                        <span class="text-muted small">K3, Pelatihan Teknis, dan Penghargaan</span>
                     </div>
                     <i class="fas fa-arrow-right icon-arrow"></i>
                 </a>
@@ -147,14 +188,24 @@
     <script>
         const themeToggleBtn = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
-        if (localStorage.getItem('theme') === 'dark') { htmlElement.setAttribute('data-bs-theme', 'dark'); updateBtnState('dark'); }
+        
+        if (localStorage.getItem('theme') === 'dark') { 
+            htmlElement.setAttribute('data-bs-theme', 'dark'); 
+            updateBtnState('dark'); 
+        }
+        
         themeToggleBtn.addEventListener('click', () => {
             if (htmlElement.getAttribute('data-bs-theme') === 'light') {
-                htmlElement.setAttribute('data-bs-theme', 'dark'); localStorage.setItem('theme', 'dark'); updateBtnState('dark');
+                htmlElement.setAttribute('data-bs-theme', 'dark'); 
+                localStorage.setItem('theme', 'dark'); 
+                updateBtnState('dark');
             } else {
-                htmlElement.setAttribute('data-bs-theme', 'light'); localStorage.setItem('theme', 'light'); updateBtnState('light');
+                htmlElement.setAttribute('data-bs-theme', 'light'); 
+                localStorage.setItem('theme', 'light'); 
+                updateBtnState('light');
             }
         });
+        
         function updateBtnState(theme) {
             if(theme === 'dark') {
                 themeToggleBtn.innerHTML = '<i class="fas fa-sun me-1"></i> Light Mode';
