@@ -10,48 +10,62 @@
     <style>
         :root { --bg-color: #f8f9fa; --text-color: #212529; --card-bg: #ffffff; --border-color: rgba(0,0,0,0.08); }
         [data-bs-theme="dark"] { --bg-color: #121212; --text-color: #f8f9fa; --card-bg: #1e1e1e; --border-color: rgba(255,255,255,0.1); }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
-        .navbar { background-color: var(--card-bg) !important; border-bottom: 1px solid var(--border-color); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+        .navbar { background-color: var(--bg-color) !important; border-bottom: 1px solid var(--border-color); }
         
-        .timeline-card {
-            background-color: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 25px; margin-bottom: 20px;
-            border-left: 5px solid #0d6efd;
+        .org-card {
+            background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; 
+            padding: 30px; margin-bottom: 25px; transition: transform 0.3s;
+            border-left: 6px solid #ffc107; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
+        .org-card:hover { transform: translateX(5px); box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15); }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="index.html" class="btn btn-outline-primary btn-sm rounded-pill px-3"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
+        <div class="container">
+            <a href="index.html" class="btn btn-outline-secondary btn-sm rounded-pill px-4 fw-bold"><i class="fas fa-arrow-left me-2"></i>Kembali</a>
         </div>
     </nav>
 
     <main class="container py-5">
-        <div class="text-center mb-5">
-            <h1 class="fw-bold">Pengalaman Organisasi & Relawan</h1>
-            <p class="text-muted">Keterlibatan sosial dan pengembangan *soft-skills* akademis.</p>
-        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-warning bg-opacity-10 text-warning rounded-circle mb-3" style="width: 70px; height: 70px;">
+                        <i class="fas fa-users fs-2"></i>
+                    </div>
+                    <h1 class="fw-bold">Riwayat Organisasi</h1>
+                    <p class="text-muted">Keterlibatan manajerial dan pengembangan <i>soft-skills</i> akademis.</p>
+                </div>
 
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4">
-                <div class="timeline-card shadow-sm">
-                    <h4 class="fw-bold">Anggota Himpunan Mahasiswa</h4>
-                    <h6 class="text-primary mb-3">Politeknik Perkapalan Negeri Surabaya (PPNS)</h6>
-                    <p class="text-muted mb-0">Berperan aktif dalam birokrasi kemahasiswaan, pengelolaan acara diskusi akademik, dan penyusunan seminar nasional yang berfokus pada perkembangan kelistrikan maritim modern.</p>
+                <div class="org-card">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4 class="fw-bold mb-1">Anggota Himpunan Mahasiswa</h4>
+                            <h6 class="text-warning fw-bold"><i class="fas fa-university me-2"></i>Politeknik Perkapalan Negeri Surabaya (PPNS)</h6>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-0" style="line-height: 1.7;">Berperan aktif dalam birokrasi kemahasiswaan, pengelolaan acara diskusi akademik, dan penyusunan seminar nasional yang berfokus pada perkembangan teknologi kelistrikan maritim modern.</p>
                 </div>
-                
-                <div class="timeline-card shadow-sm" style="border-left-color: #0dcaf0;">
-                    <h4 class="fw-bold">Relawan Edukasi Energi Terbarukan</h4>
-                    <h6 class="text-info mb-3">Program Pengabdian Masyarakat</h6>
-                    <p class="text-muted mb-0">Turut serta mengedukasi masyarakat lokal tentang pentingnya konversi energi, pengenalan pembangkit listrik ramah lingkungan (PLTS/PLTB), serta panduan instalasi kelistrikan rumah tangga yang aman.</p>
+
+                <div class="org-card" style="border-left-color: #0dcaf0;">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4 class="fw-bold mb-1">Kepanitiaan Event Teknik</h4>
+                            <h6 class="text-info fw-bold"><i class="fas fa-cogs me-2"></i>Divisi Acara & Logistik</h6>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-0" style="line-height: 1.7;">Berpengalaman dalam manajemen proyek berskala kampus, mengkoordinir kelancaran teknis acara, dan memastikan seluruh kebutuhan <i>electrical setup</i> saat acara berjalan aman dan tanpa hambatan.</p>
                 </div>
-            </div>
-            
-            <div class="col-lg-6 text-center">
-                <img src="watermarked_img_46099406987580659.png" alt="Galeri Polaroid Organisasi" class="img-fluid rounded-4 shadow" style="transform: rotate(3deg); border: 10px solid white; max-width: 90%;">
+
             </div>
         </div>
     </main>
+
+    <!-- SCRIPT INI YANG MEMPERBAIKI DARK MODE -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-bs-theme', 'dark'); }
+    </script>
 </body>
 </html>
