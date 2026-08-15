@@ -13,12 +13,64 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
         .navbar { background-color: var(--bg-color) !important; border-bottom: 1px solid var(--border-color); }
         
+        /* Desain Baru untuk Card Sertifikat */
         .cert-card {
-            background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; 
-            padding: 35px 25px; height: 100%; text-align: center; transition: all 0.3s ease;
+            background-color: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 16px; 
+            height: 100%; 
+            overflow: hidden; /* Agar sudut gambar melengkung mengikuti card */
+            text-align: left; 
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
-        .cert-card:hover { transform: translateY(-10px); border-color: #0dcaf0; box-shadow: 0 15px 30px rgba(13, 202, 240, 0.1); }
-        .cert-icon { font-size: 3.5rem; color: #0dcaf0; margin-bottom: 20px; }
+        .cert-card:hover { 
+            transform: translateY(-8px); 
+            border-color: #0dcaf0; 
+            box-shadow: 0 15px 30px rgba(13, 202, 240, 0.1); 
+        }
+        
+        /* Wadah Gambar Scan Sertifikat */
+        .cert-img-wrapper {
+            width: 100%;
+            height: 220px;
+            background-color: #e9ecef;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+        [data-bs-theme="dark"] .cert-img-wrapper { background-color: #2b2f36; }
+        
+        .cert-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Gambar akan memenuhi area, gunakan 'contain' jika tidak ingin terpotong */
+            transition: transform 0.3s ease;
+        }
+        .cert-card:hover .cert-img {
+            transform: scale(1.05); /* Efek zoom halus saat disentuh/hover */
+        }
+        
+        /* Area Teks */
+        .cert-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Desain Tanggal Berlaku */
+        .date-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: rgba(13, 202, 240, 0.1);
+            color: #0dcaf0;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
     </style>
 </head>
 <body>
@@ -36,34 +88,61 @@
 
         <div class="row g-4 justify-content-center">
             
+            <!-- 1. Sertifikat K3 -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
-                    <i class="fas fa-hard-hat cert-icon"></i>
-                    <h5 class="fw-bold mb-3">K3 Kelistrikan</h5>
-                    <p class="text-muted small mb-0">Sertifikasi pemahaman prosedur instalasi panel arus kuat dan mitigasi kecelakaan kerja listrik sesuai standar industri manufaktur.</p>
+                    <div class="cert-img-wrapper">
+                        <!-- Ganti nama file ini dengan foto scan sertifikat asli Anda -->
+                        <img src="scan-sertifikat-k3.jpg" alt="Scan Sertifikat K3" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <h5 class="fw-bold mb-2">K3 Kelistrikan</h5>
+                        <div class="date-badge">
+                            <i class="fas fa-calendar-alt me-1"></i> Berlaku s/d: 15 Agustus 2028
+                        </div>
+                        <p class="text-muted small mb-0">Sertifikasi pemahaman prosedur instalasi panel arus kuat dan mitigasi kecelakaan kerja listrik sesuai standar industri manufaktur.</p>
+                    </div>
                 </div>
             </div>
             
+            <!-- 2. Sertifikat PLC & SCADA -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
-                    <i class="fas fa-microchip cert-icon"></i>
-                    <h5 class="fw-bold mb-3">Basic PLC & SCADA</h5>
-                    <p class="text-muted small mb-0">Pelatihan intensif pemrograman <i>ladder diagram</i> dan perancangan antarmuka HMI untuk otomasi sistem permesinan pabrik.</p>
+                    <div class="cert-img-wrapper">
+                        <!-- Ganti nama file ini dengan foto scan sertifikat asli Anda -->
+                        <img src="scan-sertifikat-plc.jpg" alt="Scan Sertifikat PLC" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <h5 class="fw-bold mb-2">Basic PLC & SCADA</h5>
+                        <div class="date-badge">
+                            <i class="fas fa-calendar-alt me-1"></i> Berlaku s/d: Seumur Hidup
+                        </div>
+                        <p class="text-muted small mb-0">Pelatihan intensif pemrograman <i>ladder diagram</i> dan perancangan antarmuka HMI untuk otomasi sistem permesinan pabrik.</p>
+                    </div>
                 </div>
             </div>
 
+            <!-- 3. Sertifikat Marine Electrical -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
-                    <i class="fas fa-ship cert-icon"></i>
-                    <h5 class="fw-bold mb-3">Marine Electrical System</h5>
-                    <p class="text-muted small mb-0">Pemahaman regulasi kelistrikan maritim untuk sistem propulsi dan navigasi pada kapal perbaikan (repair) dan bangunan baru.</p>
+                    <div class="cert-img-wrapper">
+                        <!-- Ganti nama file ini dengan foto scan sertifikat asli Anda -->
+                        <img src="scan-sertifikat-marine.jpg" alt="Scan Sertifikat Marine" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <h5 class="fw-bold mb-2">Marine Electrical System</h5>
+                        <div class="date-badge">
+                            <i class="fas fa-calendar-alt me-1"></i> Berlaku s/d: 10 November 2027
+                        </div>
+                        <p class="text-muted small mb-0">Pemahaman regulasi kelistrikan maritim untuk sistem propulsi dan navigasi pada kapal perbaikan (repair) dan bangunan baru.</p>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- SCRIPT INI YANG MEMPERBAIKI DARK MODE -->
+    <!-- SCRIPT DARK MODE -->
     <script>
         if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-bs-theme', 'dark'); }
     </script>
