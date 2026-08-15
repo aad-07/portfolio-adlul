@@ -13,13 +13,13 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
         .navbar { background-color: var(--bg-color) !important; border-bottom: 1px solid var(--border-color); }
         
-        /* Desain Baru untuk Card Sertifikat */
+        /* Desain Card Sertifikat */
         .cert-card {
             background-color: var(--card-bg); 
             border: 1px solid var(--border-color); 
             border-radius: 16px; 
             height: 100%; 
-            overflow: hidden; /* Agar sudut gambar melengkung mengikuti card */
+            overflow: hidden; 
             text-align: left; 
             transition: all 0.3s ease;
             display: flex;
@@ -31,26 +31,34 @@
             box-shadow: 0 15px 30px rgba(13, 202, 240, 0.1); 
         }
         
-        /* Wadah Gambar Scan Sertifikat */
+        /* Wadah Gambar Scan */
         .cert-img-wrapper {
             width: 100%;
             height: 220px;
             background-color: #e9ecef;
-            overflow: hidden;
+            position: relative;
             border-bottom: 1px solid var(--border-color);
         }
         [data-bs-theme="dark"] .cert-img-wrapper { background-color: #2b2f36; }
         
         .cert-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Gambar akan memenuhi area, gunakan 'contain' jika tidak ingin terpotong */
+            height: 220px;
+            object-fit: cover; /* Gunakan 'contain' jika ingin seluruh sertifikat terlihat tanpa terpotong */
             transition: transform 0.3s ease;
         }
-        .cert-card:hover .cert-img {
-            transform: scale(1.05); /* Efek zoom halus saat disentuh/hover */
-        }
         
+        /* Tombol panah slider agar lebih rapi */
+        .carousel-control-prev, .carousel-control-next {
+            width: 10%;
+            opacity: 0.8;
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            padding: 15px;
+        }
+
         /* Area Teks */
         .cert-body {
             padding: 25px;
@@ -59,7 +67,6 @@
             flex-direction: column;
         }
         
-        /* Desain Tanggal Berlaku */
         .date-badge {
             font-size: 0.8rem;
             font-weight: 600;
@@ -88,28 +95,47 @@
 
         <div class="row g-4 justify-content-center">
             
-            <!-- 1. Sertifikat K3 -->
+            <!-- 1. SERTIFIKAT K3 (CONTOH 2 FOTO DEPAN BELAKANG MENGGUNAKAN SLIDER) -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <div class="cert-img-wrapper">
-                        <!-- Ganti nama file ini dengan foto scan sertifikat asli Anda -->
-                        <img src="scan-sertifikat-k3.jpg" alt="Scan Sertifikat K3" class="cert-img">
+                        <!-- Fitur Slider Bootstrap -->
+                        <div id="sliderK3" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Foto Depan -->
+                                <div class="carousel-item active">
+                                    <img src="Sertifikat Uji Kompetensi1.jpg" class="cert-img" alt="Scan K3 Depan">
+                                </div>
+                                <!-- Foto Belakang -->
+                                <div class="carousel-item">
+                                    <img src="Sertifikat Uji Kompetensi1.jpg" class="cert-img" alt="Scan K3 Belakang">
+                                </div>
+                            </div>
+                            <!-- Tombol Kiri Kanan -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sliderK3" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sliderK3" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="cert-body">
-                        <h5 class="fw-bold mb-2">K3 Kelistrikan</h5>
+                        <h5 class="fw-bold mb-2">Sertifikasi Uji Kompetensi</h5>
                         <div class="date-badge">
-                            <i class="fas fa-calendar-alt me-1"></i> Berlaku s/d: 15 Agustus 2028
+                            <i class="fas fa-calendar-alt me-1"></i> Berlaku April 2022 s/d Agustus 2025
                         </div>
-                        <p class="text-muted small mb-0">Sertifikasi pemahaman prosedur instalasi panel arus kuat dan mitigasi kecelakaan kerja listrik sesuai standar industri manufaktur.</p>
+                        <p class="text-muted small mb-0">Sertifikasi validasi keahlian teknis dari institusi pendidikan dan praktisi industri (CV. Bina Multi Engineering). Mencakup kompetensi perakitan panel listrik (PHB) bangunan, instalasi Penerangan Jalan Umum (PJU), hingga instalasi dan pengoperasian dasar Programmable Logic Controller (PLC)..</p>
                     </div>
                 </div>
             </div>
             
-            <!-- 2. Sertifikat PLC & SCADA -->
+            <!-- 2. SERTIFIKAT PLC & SCADA (CONTOH 1 FOTO SAJA) -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <div class="cert-img-wrapper">
-                        <!-- Ganti nama file ini dengan foto scan sertifikat asli Anda -->
                         <img src="scan-sertifikat-plc.jpg" alt="Scan Sertifikat PLC" class="cert-img">
                     </div>
                     <div class="cert-body">
@@ -122,11 +148,10 @@
                 </div>
             </div>
 
-            <!-- 3. Sertifikat Marine Electrical -->
+            <!-- 3. SERTIFIKAT MARINE ELECTRICAL (CONTOH 1 FOTO SAJA) -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <div class="cert-img-wrapper">
-                        <!-- Ganti nama file ini dengan foto scan sertifikat asli Anda -->
                         <img src="scan-sertifikat-marine.jpg" alt="Scan Sertifikat Marine" class="cert-img">
                     </div>
                     <div class="cert-body">
@@ -141,6 +166,9 @@
 
         </div>
     </main>
+
+    <!-- PENTING: Script Bootstrap diperlukan agar slider/panah foto bisa diklik -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- SCRIPT DARK MODE -->
     <script>
