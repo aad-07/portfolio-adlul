@@ -41,22 +41,28 @@
         }
         [data-bs-theme="dark"] .cert-img-wrapper { background-color: #2b2f36; }
         
+        /* Modifikasi Gambar agar bisa diklik (Zoom) */
         .cert-img {
             width: 100%;
             height: 220px;
-            object-fit: cover; /* Gunakan 'contain' jika ingin seluruh sertifikat terlihat tanpa terpotong */
-            transition: transform 0.3s ease;
+            object-fit: cover; 
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: zoom-in; /* Menampilkan ikon kaca pembesar */
+        }
+        .cert-img:hover {
+            filter: brightness(0.9); /* Memberi efek redup sedikit saat disentuh agar elegan */
         }
         
         /* Tombol panah slider agar lebih rapi */
         .carousel-control-prev, .carousel-control-next {
-            width: 10%;
-            opacity: 0.8;
+            width: 12%;
+            opacity: 0.9;
+            z-index: 5;
         }
         .carousel-control-prev-icon, .carousel-control-next-icon {
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.6);
             border-radius: 50%;
-            padding: 15px;
+            padding: 18px;
         }
 
         /* Area Teks */
@@ -95,28 +101,28 @@
 
         <div class="row g-4 justify-content-center">
             
-            <!-- 1. SERTIFIKAT K3 (CONTOH 2 FOTO DEPAN BELAKANG MENGGUNAKAN SLIDER) -->
+            <!-- 1. SERTIFIKAT UJI KOMPETENSI (DENGAN SLIDER) -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <div class="cert-img-wrapper">
                         <!-- Fitur Slider Bootstrap -->
-                        <div id="sliderK3" class="carousel slide" data-bs-ride="carousel">
+                        <div id="sliderKompetensi" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                             <div class="carousel-inner">
                                 <!-- Foto Depan -->
                                 <div class="carousel-item active">
-                                    <img src="Sertifikat Uji Kompetensi1.jpg" class="cert-img" alt="Scan K3 Depan">
+                                    <img src="Sertifikat Uji Kompetensi1.jpg" class="cert-img" alt="Sertifikat Uji Kompetensi Depan">
                                 </div>
                                 <!-- Foto Belakang -->
                                 <div class="carousel-item">
-                                    <img src="Sertifikat Uji Kompetensi1.jpg" class="cert-img" alt="Scan K3 Belakang">
+                                    <img src="Sertifikat Uji Kompetensi2.jpg" class="cert-img" alt="Daftar Kompetensi Belakang">
                                 </div>
                             </div>
                             <!-- Tombol Kiri Kanan -->
-                            <button class="carousel-control-prev" type="button" data-bs-target="#sliderK3" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sliderKompetensi" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#sliderK3" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#sliderKompetensi" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -125,41 +131,41 @@
                     <div class="cert-body">
                         <h5 class="fw-bold mb-2">Sertifikasi Uji Kompetensi</h5>
                         <div class="date-badge">
-                            <i class="fas fa-calendar-alt me-1"></i> Berlaku April 2022 s/d Agustus 2025
+                            <i class="fas fa-calendar-alt me-1"></i> Berlaku: April 2022 s/d April2025
                         </div>
-                        <p class="text-muted small mb-0">Sertifikasi validasi keahlian teknis dari institusi pendidikan dan praktisi industri (CV. Bina Multi Engineering). Mencakup kompetensi perakitan panel listrik (PHB) bangunan, instalasi Penerangan Jalan Umum (PJU), hingga instalasi dan pengoperasian dasar Programmable Logic Controller (PLC)..</p>
+                        <p class="text-muted small mb-0" style="line-height: 1.6;">Sertifikasi validasi keahlian teknis dari institusi pendidikan dan praktisi industri (CV. Bina Multi Engineering). Mencakup kompetensi perakitan panel listrik (PHB) bangunan, instalasi Penerangan Jalan Umum (PJU), hingga instalasi dan pengoperasian dasar Programmable Logic Controller (PLC).</p>
                     </div>
                 </div>
             </div>
             
-            <!-- 2. SERTIFIKAT PLC & SCADA (CONTOH 1 FOTO SAJA) -->
+            <!-- 2. SERTIFIKAT LAINNYA (Contoh) -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <div class="cert-img-wrapper">
-                        <img src="scan-sertifikat-plc.jpg" alt="Scan Sertifikat PLC" class="cert-img">
+                        <img src="scan-sertifikat-k3.jpg" alt="Sertifikat K3" class="cert-img">
                     </div>
                     <div class="cert-body">
-                        <h5 class="fw-bold mb-2">Basic PLC & SCADA</h5>
+                        <h5 class="fw-bold mb-2">K3 Kelistrikan</h5>
                         <div class="date-badge">
-                            <i class="fas fa-calendar-alt me-1"></i> Berlaku s/d: Seumur Hidup
+                            <i class="fas fa-calendar-alt me-1"></i> Berlaku s/d: 15 Agustus 2028
                         </div>
-                        <p class="text-muted small mb-0">Pelatihan intensif pemrograman <i>ladder diagram</i> dan perancangan antarmuka HMI untuk otomasi sistem permesinan pabrik.</p>
+                        <p class="text-muted small mb-0" style="line-height: 1.6;">Sertifikasi pemahaman prosedur instalasi panel arus kuat dan mitigasi kecelakaan kerja listrik sesuai standar industri manufaktur.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. SERTIFIKAT MARINE ELECTRICAL (CONTOH 1 FOTO SAJA) -->
+            <!-- 3. SERTIFIKAT LAINNYA (Contoh) -->
             <div class="col-md-6 col-lg-4">
                 <div class="cert-card">
                     <div class="cert-img-wrapper">
-                        <img src="scan-sertifikat-marine.jpg" alt="Scan Sertifikat Marine" class="cert-img">
+                        <img src="scan-sertifikat-marine.jpg" alt="Sertifikat Marine" class="cert-img">
                     </div>
                     <div class="cert-body">
                         <h5 class="fw-bold mb-2">Marine Electrical System</h5>
                         <div class="date-badge">
                             <i class="fas fa-calendar-alt me-1"></i> Berlaku s/d: 10 November 2027
                         </div>
-                        <p class="text-muted small mb-0">Pemahaman regulasi kelistrikan maritim untuk sistem propulsi dan navigasi pada kapal perbaikan (repair) dan bangunan baru.</p>
+                        <p class="text-muted small mb-0" style="line-height: 1.6;">Pemahaman regulasi kelistrikan maritim untuk sistem propulsi dan navigasi pada kapal perbaikan (repair) dan bangunan baru.</p>
                     </div>
                 </div>
             </div>
@@ -167,12 +173,48 @@
         </div>
     </main>
 
-    <!-- PENTING: Script Bootstrap diperlukan agar slider/panah foto bisa diklik -->
+    <!-- ========================================== -->
+    <!-- MODAL (POP-UP) UNTUK MENAMPILKAN FOTO FULL -->
+    <!-- ========================================== -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0 justify-content-end position-absolute top-0 end-0" style="z-index: 10;">
+                    <!-- Tombol Silang (Close) -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="background-color: rgba(0,0,0,0.7); padding: 12px; margin: 15px; border-radius: 50%;"></button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <!-- Tempat gambar full akan dimuat -->
+                    <img src="" id="fullImage" class="img-fluid rounded-3 shadow-lg" alt="Sertifikat Full" style="max-height: 90vh;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SCRIPT DARK MODE -->
     <script>
-        if (localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-bs-theme', 'dark'); }
+        // SCRIPT UNTUK FITUR KLIK GAMBAR MUNCUL FULL SCREEN
+        document.addEventListener('DOMContentLoaded', function() {
+            const certImages = document.querySelectorAll('.cert-img');
+            const modalImage = document.getElementById('fullImage');
+            
+            // Looping ke semua gambar yang memiliki class 'cert-img'
+            certImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modalImage.src = this.src; // Menyalin link gambar yang diklik ke dalam pop-up
+                    const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+                    imageModal.show(); // Memunculkan pop-up
+                });
+            });
+        });
+
+        // SCRIPT DARK MODE
+        const htmlElement = document.documentElement;
+        if (localStorage.getItem('theme') === 'dark') { 
+            htmlElement.setAttribute('data-bs-theme', 'dark'); 
+        }
     </script>
 </body>
 </html>
